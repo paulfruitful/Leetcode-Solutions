@@ -33,4 +33,4 @@ If you would like to contribute to this repository by adding your own solutions 
 
 ## Contact
 
-If you have any questions or feedback about this repository, feel free to reach out to me via email at [your-email@example.com](mailto:fruitful2007@outlook.com).
+If you have any questions or feedback about this repository, feel free to reach out to me via email at [fruitful2007@outlook.com](mailto:fruitful2007@outlook.com).
