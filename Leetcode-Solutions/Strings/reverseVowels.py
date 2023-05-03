@@ -1,3 +1,5 @@
+Two Pointer Solution:
+
 class Solution(object):
     def reverseVowels(self, s):
         """
@@ -17,4 +19,26 @@ class Solution(object):
             r-=1
         return "".join(s)
         
+        
+Or
+class Solution(object):
+    def reverseVowels(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        vowels=['a','e','i','o','u','A','E','I','O','U']
+        v=ans=""
+        for i in s:
+            if i in vowels:
+                v+=i
+        v=v[-1::-1]
+        j=0
+        for i in s:
+            if i in vowels:
+                ans+=v[j]
+                j+=1
+            else:
+                ans+=i
+        return ans 
         
