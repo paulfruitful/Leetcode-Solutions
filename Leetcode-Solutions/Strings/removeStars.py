@@ -4,18 +4,15 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        result = ""
-        star_indices = []
+        result_stack=[]
 
-        for i, char in enumerate(s):
-          if char == "*":
-            
-            star_indices.append(i)
-            continue
-          result+=char
-        for i in star_indices:
-            
-
+        for i in s:
+            if i !='*':
+                result_stack.append(i)
+            else:
+                result_stack.pop()
+        return ''.join(result_stack)
+         
 
 
 
