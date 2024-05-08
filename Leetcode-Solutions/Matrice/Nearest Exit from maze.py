@@ -1,3 +1,33 @@
+#BFS Time and memory efficient
+class Solution(object):
+    def nearestExit(self, maze, entrance):
+        """
+        :type maze: List[List[str]]
+        :type entrance: List[int]
+        :rtype: int
+        """
+        cols = len(maze[0])
+        rows = len(maze)
+        queue=[[entrance[0],entrance[1],-1]]
+
+        while queue:
+            r,c,distance=queue.pop(0)
+            if not(0 <= r < rows and 0 <= c < cols):
+                if distance>0:
+                    return distance
+                continue
+            if maze[r][c]=='+':
+                continue
+            maze[r][c]='+'
+
+            for _r,_c in [(0,1),(0,-1),(1,0),(-1,0)]:
+                queue.append([r+_r,c+_c,distance+1])
+        return -1
+
+
+
+        
+#This is the DFS Implementation and it is time inefficient
 class Solution(object):
     def nearestExit(self, maze, entrance):
         """
