@@ -1,0 +1,29 @@
+    # Start by iterating over each email address in the provided list.
+    for i in range(len(emails)):
+        # Split each email into two parts: local and domain, using the '@' symbol as the separator.
+        temp = emails[i].split("@")
+        
+        # Initialize an empty string to reconstruct the local part according to the rules.
+        x = ''
+        
+        # Iterate over each character in the local part of the email.
+        for j in temp[0]:
+            # If the character is '.', we skip it according to the rules.
+            if j == '.':
+                continue
+            # If the character is '+', we stop processing further characters in the local part,
+            # as everything after '+' is to be ignored.
+            elif j == '+':
+                break
+            # For any other character, we add it to our reconstructed local part.
+            else:
+                x += j
+        
+        # After processing the local part, we reconstruct the email using the modified local part
+        # and the original domain part, separated by '@'.
+        emails[i] = x + '@' + temp[1]
+    
+    # Once all emails are processed, we remove duplicates by converting the list to a set,
+    # which automatically removes any duplicate entries. The length of this set is the count
+    # of unique emails, which is then returned.
+    return len(set(emails))
